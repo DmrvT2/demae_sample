@@ -54,6 +54,17 @@ input.onButtonPressed(Button.A, function () {
     basic.showIcon(IconNames.Yes)
 })
 /**
+ * ◆モーターを停止するよ
+ */
+input.onButtonPressed(Button.B, function () {
+    basic.showString("B")
+    while (true) {
+        servos.P0.stop()
+        servos.P1.stop()
+        basic.showIcon(IconNames.No)
+    }
+})
+/**
  * ▼走り方（動き）。それぞれの細かい動きを調整してね
  */
 function _1マス進む () {
@@ -71,17 +82,6 @@ function 左折 () {
  */
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     music.play(music.builtinPlayableSoundEffect(soundExpression.giggle), music.PlaybackMode.UntilDone)
-})
-/**
- * ◆モーターを停止するよ
- */
-input.onButtonPressed(Button.B, function () {
-    basic.showString("B")
-    while (true) {
-        servos.P0.stop()
-        servos.P1.stop()
-        basic.showIcon(IconNames.No)
-    }
 })
 /**
  * ◆最初だけ、LEDにアイコンを表示するよ

@@ -7,7 +7,7 @@ function 右折 () {
     basic.pause(825)
 }
 input.onButtonPressed(Button.A, function () {
-    basic.showIcon(IconNames.Heart)
+    basic.showIcon(IconNames.Ghost)
     前進１マス()
     右折()
     前進１マス()

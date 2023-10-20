@@ -1,4 +1,7 @@
 /**
+ * ▼走行ルート：右のブロック「左折」「前進」「右折」を足してください
+ */
+/**
  * 動き：Ctrlキーを押しながら ドラッグ＆ドロップ
  */
 function 右折 () {
@@ -11,7 +14,8 @@ input.onButtonPressed(Button.A, function () {
     前進１マス()
     右折()
     前進１マス()
-    停止()
+    servos.P0.stop()
+    servos.P1.stop()
 })
 input.onButtonPressed(Button.B, function () {
     basic.showString("B")
@@ -29,13 +33,6 @@ function 左折 () {
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     music.play(music.builtinPlayableSoundEffect(soundExpression.giggle), music.PlaybackMode.UntilDone)
 })
-/**
- * ▼走行ルート：右のブロック「左折」「前進」「右折」を足してください
- */
-function 停止 () {
-    servos.P0.stop()
-    servos.P1.stop()
-}
 function 前進１マス () {
     servos.P0.run(52)
     servos.P1.run(-50)
